@@ -26,11 +26,9 @@ jobs:
       - uses: cschleiden/replace-tokens@v1
         name: Replace Tokens on AWS Script
         with:
-          tokenPrefix: '{{'
-          tokenSuffix: '}}'
           files: '["**/after-install.sh"]'
         env:
-          S3-BUCKET: ${{ vars.S3BUCKET }}
+          AWSS3BUCKET: ${{ vars.S3BUCKET }}
 
       - uses: aws-actions/configure-aws-credentials@v1
         with:
