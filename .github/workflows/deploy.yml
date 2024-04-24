@@ -59,7 +59,7 @@ jobs:
       with:
         role-to-assume: ${{ secrets.IAMROLE_GITHUB }}
         role-session-name: GitHub-Action-Role
-        aws-region: ${{ vars.AWS_REGION }}
+        aws-region: ${{ vars.AWSREGION }}
     - run: |
         echo "Deploying branch ${{ env.GITHUB_REF }} to ${{ github.event.inputs.environment }}"
         commit_hash=`git rev-parse HEAD`
